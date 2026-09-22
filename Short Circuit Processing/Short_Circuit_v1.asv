@@ -12,38 +12,22 @@ data = tdmsread(filename);
 
 disp(data);
 
-%% RPM threshold
+% RPM threshold
 
-lowerBound = 500;
-upperBound = 2000;
 
-%% Read data
+
+% Read mean RMS current from phase 2
 
 tbl = data{1};
 
 current = tbl.EV_Phase2_RMS_Current;
-rpm = tbl.EV_Measured_Speed;
-
-%% Find samples within RPM threshold
-
-indices = find(rpm >= lowerBound & rpm <= upperBound);
-
-%% Calculate mean RMS current
-
-mean_RMS_current = mean(current(indices));
-
-disp(mean_RMS_current);
-
-% Moving average
 
 movingavg = [];
 
-filtlen = 25;
+filtlen = 25
 for q = 1:(10437-filtlen)
     movingavg(q) = sum( current(q:q+filtlen)) / (filtlen+1);
 end
-
-% plots 
 
 figure;
 
@@ -54,7 +38,6 @@ plot(movingavg, 'r');
 xlabel("Index");
 ylabel("RMS Current (A)");
 title("Short Circuit Test - Phase 2 RMS Current");
-legend("Raw current", "Moving average", "Location", "best");
 grid on;
 
 
