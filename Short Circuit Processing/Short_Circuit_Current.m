@@ -1,4 +1,4 @@
-% Short circuit current and d-axis inductance parameter data acquisition     
+% Short circuit current parameter data acquisition     
 
 clear;
 clc;

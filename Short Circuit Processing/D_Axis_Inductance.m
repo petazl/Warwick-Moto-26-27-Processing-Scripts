@@ -1,0 +1,1 @@
+% D-axis inductance parameter characterisation
