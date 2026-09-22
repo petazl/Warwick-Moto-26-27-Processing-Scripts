@@ -15,7 +15,6 @@ disp(data);
 %% RPM threshold
 
 lowerBound = 500;
-upperBound = 2000;
 
 %% Read data
 
@@ -26,7 +25,7 @@ rpm = tbl.EV_Measured_Speed;
 
 %% Find samples within RPM threshold
 
-indices = find(rpm >= lowerBound & rpm <= upperBound);
+indices = find(rpm >= lowerBound);
 
 %% Calculate mean RMS current
 
