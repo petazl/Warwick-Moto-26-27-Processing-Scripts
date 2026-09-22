@@ -10,8 +10,6 @@ filename = "short-circuit-test.tdms";
 
 data = tdmsread(filename);
 
-disp(data);
-
 %% RPM threshold
 
 lowerBound = 500;

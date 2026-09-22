@@ -6,11 +6,9 @@ close all;
 
 % Load TDMS data
 
-filename0 = "short-circuit-test.tdms";
-filename1 = "open-circuit-test.tdms";
+filename = "short-circuit-test.tdms";
 
-data = tdmsread(filename0);
-data = tdmsread(filename1)
+data = tdmsread(filename);
 
 % Declare motor parameters
 
@@ -35,7 +33,6 @@ lowerBound = 500;
 tbl = data{1};
 
 current = tbl.EV_Phase2_RMS_Current;
-voltage = 
 rpm = tbl.EV_Measured_Speed;
 
 %% Find samples within RPM threshold
@@ -45,7 +42,8 @@ indices = find(rpm >= lowerBound);
 %% Calculate mean RMS current
 
 mean_RMS_current = mean(current(indices));
-mean_RMS_voltage = mean(voltage(indices));
+
+disp(mean_RMS_current);
 
 
 
