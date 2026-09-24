@@ -71,12 +71,12 @@ V_rms_4000 = mean(pks)/sqrt(2);
 V_rms_56000 = mean(pks)/sqrt(2);
 V_rms_6000 = mean(pks)/sqrt(2);
 
-back_emf_1000 = V_rms_1000;
-back_emf_2000 = V_rms_2000;
-back_emf_3000 = V_rms_3000;
-back_emf_4000 = V_rms_4000;
-back_emf_5000 = V_rms_5000;
-back_emf_6000 = V_rms_6000;
+back_emf_1000 = V_rms_1000/1000;
+back_emf_2000 = V_rms_2000/2000;
+back_emf_3000 = V_rms_3000/3000;
+back_emf_4000 = V_rms_4000/4000;
+back_emf_5000 = V_rms_5000/5000;
+back_emf_6000 = V_rms_6000/6000;
 
 back_emf = mean(back_emf_1000, back_emf_2000, back_emf_3000, back_emf_4000, back_emf_5000, back_emf_6000);
 
