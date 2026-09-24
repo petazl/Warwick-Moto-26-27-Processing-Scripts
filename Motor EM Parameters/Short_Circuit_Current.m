@@ -6,7 +6,7 @@ close all;
 
 % Load TDMS data
 
-filename = "short-circuit-test.tdms";
+filename = "short-circuit-test-1500-RPM.tdms";
 
 data = tdmsread(filename);
 
